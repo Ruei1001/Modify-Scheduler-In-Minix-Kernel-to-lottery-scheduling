@@ -1,10 +1,10 @@
 Mofified : proc.h proc.c
 Implement it by replacing the proc.h and proc.c in /usr/src/minix/kerne/ with my proc.h and proc.c and recompile kernel
 
-1) Intheinit_proc()everyprocess’ticketNumsisinitiallysetas5
-2) Toincreaseadd1ticketwhenblock,IaddsetProcPriority(1,p)atthedequeue
+1) In the init_proc() every process’ ticketNums is initially set as 5
+2) To increase add 1 ticket when block,I add setProcPriority(1,p) at the dequeue
 function. And to decrease 1 ticket when use all time quantum, I add a statement in enqueue function, if a process p_cycles > 0, which mean cycles this process used > 0, it used all time quantum before so call setProcPriority(-1, p) at enqueue
-3) Wheninterrupthappened,itwillcalldequeue,Ihaveaforlooptoloopover every priority level, print out count of process at each level schedule queue.
+3) When interrupt happened,it will call dequeue,I have a for loop to loopover every priority level, print out count of process at each level schedule queue.
 
 
 In proc.h I add a variable usnsigned ticketNums to record the ticket number a process has.
