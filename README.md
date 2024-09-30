@@ -16,4 +16,4 @@ inside this function
 indicates the number of ticket is going to assign to the process p, and can judge if
 the process’ ticketNums add num will exceed 100 or be less then 1, if exceed 100, the process’ ticket will remain 100, if less then 1, the process’ ticket num will remain 1.
 3) Inthedequeuefunction,IaddsetProcTicket(1,p)becausewhendequeueis called means a process is blocked, and whenever a process is blocked I will increase it’s ticket number.
-4) Inpick_proc()Idothelotteryinthisfunction,theprocesswhowonthelottery, will be return when this function ends.
+4) In pick_proc() I do the lottery in this function,the process who won the lottery, will be return when this function ends.
